@@ -1,0 +1,4 @@
+alert("Email affiché avec succès!");
+
+document.getElementById('email-selected').innerHTML = "<%= j render 'show', email: @email %>"
+document.getElementById('<%=@email.id%>').classList.remove("fw-bold")

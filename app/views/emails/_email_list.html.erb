@@ -1,0 +1,29 @@
+<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white m-3 border" style="width: 380px;">
+  <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none">
+    <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+    <span class="fs-5 fw-semibold">Emails</span>
+  </a>
+
+  <ul id='email-list' class="list-group list-group-flush">
+    <% @all_emails.each do |email|%>
+      <li class="list-group-item  fw-bold" id="<%=email.id%>">
+        <a class="list-group-item list-group-item-action lh-tight" aria-current="true">
+          <strong class="mb-1"><%= link_to email.object, email_path(email.id), remote: true, methode: :get%></strong>  
+          <p><%= email.body %></p>
+        </a>  
+      </li>
+    
+    <% end %>
+  </ul>
+</div>
+
+
+
+<div class="flex-column flex-shrink-0 p-3 m-3 bg-light border" style="width: 480px;">
+  
+  <div id="email-selected">
+    <div id="displayed-email">
+    </div>
+  </div>
+     
+</div>

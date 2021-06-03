@@ -1,0 +1,10 @@
+  <li>
+    <%= task.title  %>
+    <% unless task.deadline.nil? %>
+      , to read: <%= task.deadline.strftime('%D')  %>
+    <% end %>
+    <%= check_box_tag :status, 1, false, data: { remote: true, url: root_path, params: { id: "TaskStatus", status: task.status}.to_param, method: "put" }%>
+    <%= link_to '<i class="fas fa-trash"></i>'.html_safe, task_path(task.id), data: {confirm: "Êtes-vous sûr de vouloir supprimer cette tâche ?"}, method: "delete", remote: true%>
+
+  </li>
+

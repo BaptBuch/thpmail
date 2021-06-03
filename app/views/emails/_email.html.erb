@@ -1,0 +1,6 @@
+<li class="list-group-item" id="<%=email.id%>">
+  <a class="list-group-item list-group-item-action lh-tight" aria-current="true">
+    <strong class="mb-1"><%= link_to email.object, email_path(email.id), remote: true, method: :get %></strong>  
+    <p><%= email.body %></p>
+  </a>  
+</li>
